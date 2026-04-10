@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Attendance</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='CSS/attendance.css') }}">
+</head>
+<body>
+    <header class="navbar">
+        <div class="logo">
+            <img src="{{ url_for('static', filename='images/face-scan.png') }}" width="50px" alt="">
+            <a href="/">FACE</a>
+        </div>
+        <nav>
+            <a href="/attendance" class="nav-link">Attendance</a>
+            <a href="/listusers" class="nav-link">Student</a>
+        </nav>
+    </header>
+
+    <main class="container">
+        {% if mess %}
+        <p class="error-message">{{ mess }}</p>
+        {% endif %}
+
+        <h1>Today's Attendance</h1>
+        <a href="/start" class="btn-primary">Take Attendance</a>
+
+        <table class="attendance-table">
+            <thead>
+                <tr>
+                    <th>S.NO</th>
+                    <th>ID</th>
+                    <th>Name</th>
+                    <th>Time</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% if l %}
+                {% for i in range(l) %}
+                <tr>
+                    <td>{{ i + 1 }}</td>
+                    <td>{{ rolls[i] }}</td>
+                    <td>{{ names[i] }}</td>
+                    <td>{{ times[i] }}</td>
+                </tr>
+                {% endfor %}
+                {% endif %}
+            </tbody>
+        </table>
+    </main>
+</body>
+</html>

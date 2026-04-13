@@ -11,60 +11,42 @@
 
 <body>
 
-<header class="navbar">
-    <div class="logo">
-        <img src="{{ url_for('static', filename='images/face-scan.png') }}" alt="Face Logo">
-        <a href="/">FACE</a>
-    </div>
-
-    <nav class="nav-links">
-        <a href="/attendance" class="nav-link"><i class="fas fa-check-circle"></i> Attendance</a>
-        <a href="/listusers" class="nav-link"><i class="fas fa-user-graduate"></i> Students</a>
-    </nav>
-</header>
-
 <section class="hero">
-    <!-- FOOTER -->
-<footer class="bottom-bar">
-    <div class="left-info">
-        © FACE 2026 - About - Privacy
+    <div class="hero-nav">
+        <a href="/" class="nav-btn">Home</a>
+        {% if session.get('admin') %}
+            <a href="/listusers" class="nav-btn">Students</a>
+            <a href="/logout" class="nav-btn">Logout</a>
+        {% else %}
+            <a href="/login" class="nav-btn">Admin Login</a>
+        {% endif %}
     </div>
-
-    <div class="center-tag">
-        #FACERecognition
-    </div>
-
-    <div class="right-share">
-        <span>Share</span>
-        <i class="fab fa-facebook-f"></i>
-        <i class="fab fa-twitter"></i>
-        <i class="fab fa-instagram"></i>
-    </div>
-</footer>
-    
 
     <div class="hero-center">
-
         <img src="{{ url_for('static', filename='images/images.png') }}" class="hero-icon" alt="icon">
-
         <h2 class="company">Abhishek Technologies</h2>
         <p class="presents">presents</p>
-
-        <h1 class="face-title"> F.A.C.E </h1>
-
+        <h1 class="face-title">F.A.C.E</h1>
         <h2 class="main-title">
             FACIAL ATTENDANCE AND CONTROL ENGINE
         </h2>
-
         <p class="subtitle">
             An AI system that marks attendance using facial recognition.
         </p>
-
         <a href="/attendance" class="btn">Get Started</a>
-
     </div>
 
-
+    <footer class="bottom-bar">
+        <div class="left-info">
+            © FACE 2026 - About - Privacy
+        </div>
+        <div class="right-share">
+            <span>Share</span>
+            <i class="fab fa-facebook-f"></i>
+            <i class="fab fa-twitter"></i>
+            <i class="fab fa-instagram"></i>
+        </div>
+    </footer>
 
 </section>
 

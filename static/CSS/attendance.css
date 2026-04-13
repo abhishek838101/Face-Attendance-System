@@ -125,3 +125,11 @@ h1 {
         font-size: 0.9rem;
     }
 }
+/* FORCE NAVBAR LINKS WHITE */
+.navbar a:link,
+.navbar a:visited,
+.navbar a:hover,
+.navbar a:active {
+    color: #fff !important;
+    text-decoration: none !important;
+}

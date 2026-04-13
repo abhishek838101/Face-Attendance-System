@@ -94,8 +94,7 @@ body {
 }
 
 .home-btn:hover {
-    transform: translateX(-3px);
-    color:aqua;
+    transform: translateY(-2px);
 }
 
 .error {

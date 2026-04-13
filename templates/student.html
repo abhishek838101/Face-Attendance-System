@@ -50,12 +50,14 @@ body {
     font-size: 20px;
     font-weight: 600;
 }
+
 .nav-links {
     display: flex;
     align-items: center;
     gap: 25px;
     margin-left: auto;
 }
+
 .nav-links a {
     text-decoration: none;
     color: white;
@@ -101,7 +103,6 @@ main {
     box-shadow: 0 5px 15px rgba(0,0,0,0.3);
 }
 
-/* TABLE */
 .student-table {
     width: 100%;
     border-collapse: collapse;
@@ -129,7 +130,6 @@ main {
     background: rgba(255,255,255,0.1);
 }
 
-/* MODAL BACKDROP */
 .modal {
     position: fixed;
     top: 0;
@@ -142,7 +142,6 @@ main {
     align-items: center;
 }
 
-/* HIDDEN */
 .hidden {
     display: none;
 }
@@ -205,12 +204,10 @@ main {
     color: black;
 }
 </style>
+
 </head>
-
 <body>
-
 <header class="navbar">
-
     <nav class="nav-links">
         <a href="/" class="home-btn">Home</a>
         <a href="/attendance">Attendance</a>
@@ -220,11 +217,8 @@ main {
             <a href="/login">Admin Login</a>
         {% endif %}
     </nav>
-
 </header>
-
 <main>
-
 <div class="action-buttons">
     <button onclick="showModal('addModal')" class="btn btn-add">Add New Student</button>
     <button onclick="showModal('deleteModal')" class="btn btn-delete">Delete Student</button>
@@ -279,7 +273,6 @@ main {
         <p>Total Users: <strong>{{ totalreg }}</strong></p>
     </div>
 </div>
-
 </main>
 
 <script>
@@ -290,6 +283,5 @@ function closeModal(id){
     document.getElementById(id).classList.add('hidden');
 }
 </script>
-
 </body>
 </html>

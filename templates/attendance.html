@@ -26,7 +26,6 @@ body {
     position: relative;
 }
 
-/* NAVBAR */
 .navbar {
     display: flex;
     justify-content: flex-end;
@@ -39,6 +38,7 @@ body {
     align-items: center;
     gap: 15px;
 }
+
 .nav-links a:hover {
     color: #00c6ff;
 }
@@ -83,13 +83,11 @@ body {
     font-size: 18px;
 }
 
-/* MAIN */
 .container {
     padding: 40px;
     text-align: center;
 }
 
-/* ERROR / MESSAGE BOX */
 .error-message {
     background: rgba(255, 77, 77, 0.15);
     border: 1px solid rgba(255, 77, 77, 0.4);
@@ -101,13 +99,11 @@ body {
     animation: fadeIn 0.3s ease-in-out;
 }
 
-/* TITLE */
 h1 {
     margin-bottom: 20px;
     font-size: 28px;
 }
 
-/* BUTTON */
 .btn-primary {
     display: inline-block;
     padding: 12px 20px;
@@ -125,7 +121,6 @@ h1 {
     box-shadow: 0 5px 15px rgba(0,114,255,0.4);
 }
 
-/* TABLE */
 .attendance-table {
     width: 100%;
     border-collapse: collapse;
@@ -154,19 +149,16 @@ h1 {
     background: rgba(255,255,255,0.1);
 }
 
-/* EMPTY STATE */
 .empty {
     margin-top: 20px;
     opacity: 0.7;
 }
 
-/* ANIMATION */
 @keyframes fadeIn {
     from {opacity: 0; transform: translateY(-10px);}
     to {opacity: 1; transform: translateY(0);}
 }
 
-/* RESPONSIVE */
 @media (max-width: 768px) {
     .container {
         padding: 20px;
@@ -178,10 +170,9 @@ h1 {
     }
 }
 </style>
+
 </head>
-
 <body>
-
 <header class="navbar">
     <div class="nav-links">
         <a href="/" class="home-btn">Home</a>
@@ -189,9 +180,7 @@ h1 {
             <a href="/listusers" class="nav-links">Students</a>
         {% endif %}
     </div>
-
 </header>
-
 <main class="container">
     {% if mess %}
     <div class="error-message">{{ mess }}</div>
@@ -222,8 +211,6 @@ h1 {
     {% else %}
         <p class="empty">No attendance recorded today yet.</p>
     {% endif %}
-
 </main>
-
 </body>
 </html>

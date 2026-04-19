@@ -225,6 +225,19 @@ def start():
 def add():
     newusername = request.form['newusername']
     newuserid = request.form['newuserid']
+    if not newusername.isalpha() or len(newusername) > 30:
+        existing_users = os.listdir('static/faces')
+        return render_template(
+            'student.html',
+            userlist=existing_users,
+            names=[u.split('_')[0] for u in existing_users],
+            rolls=[u.split('_')[1] for u in existing_users],
+            l=len(existing_users),
+            totalreg=totalreg(),
+            datetoday2=datetoday2,
+            error="Username must contain only alphabets and be max 30 characters long!"
+    )
+
     existing_users = os.listdir('static/faces')
     for user in existing_users:
         try:
